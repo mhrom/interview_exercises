@@ -13,9 +13,9 @@ def main():
     for i in ListOfString[::-1]:
         for j in i:
             ListOfReverseSymbols.insert(0,j)
-    for  i in ListOfReverseSymbols:
-        print i
-    return ListOfReverseSymbols
+    ReverseString = ''.join(ListOfReverseSymbols[::-1])
+    print 'The reversed string is --> "' + ReverseString + '"'
+    return ListOfReverseSymbols[::-1]
 
 if __name__=="__main__":
     main()
