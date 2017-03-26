@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-"""Build a histogram getting values from list"""
+"""Build a histogram getting values from list as argumments from command line"""
 
 import sys
 InputOfNumbers = sys.argv[1:] 
