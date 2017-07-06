@@ -1,15 +1,19 @@
-var input = 'qwerty@!@@@';
+//var input = 'qert123QW';
+var input = prompt('Type your password!');
 var inputArray = [];
 inputArray = input.split('');
 
-function isPasswordValid(input){
-  if ((hasUpperCase(inputArray) && hasLowerCase(inputArray) && isLongEnough(inputArray) && hasSpecialCharacter(inputArray))){
+function isPasswordValid(inputArray){
+  var UpperCase = hasUpperCase(inputArray);
+  var LowerCase = hasLowerCase(inputArray);
+  var SpecialCharacter = hasSpecialCharacter(inputArray);
+  var LongEnough = isLongEnough(inputArray);    //console.log(UpperCase,LowerCase,SpecialCharacter,LongEnough);
+  if ((UpperCase && LowerCase) && (LongEnough && SpecialCharacter)){
     console.log('Password is valid');
-  if ((hasUpperCase(inputArray) || hasLowerCase(inputArray) || isLongEnough(inputArray) || hasSpecialCharacter(inputArray)) === false){
-    console.log('\nPlease check your password inluded upper, lower, special characters and is long enough.');
-    }
+  }else{
+   console.log('\nPlease check your password inluded upper, lower, special characters and that it is long enough.'); 
   }
-}
+ }
 
 function hasUpperCase(inputArray){
   var result = [];
@@ -66,7 +70,6 @@ function hasSpecialCharacter(inputArray){
   for (var l = 0; l < inputArray.length; l++){
     for (var s = 0; s < specialCharacters.length; s++){
       if (inputArray[l] === specialCharacters[s]){
-        console.log(inputArray[l]);
         result.push(true);
       }else{
         result.push(false);
@@ -79,7 +82,7 @@ function hasSpecialCharacter(inputArray){
       searchStatus = true;
       }  
     }
-    return false;
-  }
+  return false;
+}
 
 isPasswordValid(inputArray);
